@@ -1,0 +1,18 @@
+{{ define "navbar" }}
+<nav class="navbar">
+        <header>
+        <h1 class="navbar__title"><span>Caleb Tracey</span></h1>
+    </header>
+    <ul class="navbar__content">
+        {{ range .Site.Menus.main }}
+        <li class="navbar__item">
+            <a class="navbar__link{{ if $.IsMenuCurrent "main" . }} active" aria-current="page{{ end }}" href="{{ .URL }}"> {{ .Pre }}
+                <span>{{ .Name }}</span>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</nav>
+{{ end }}
+
+

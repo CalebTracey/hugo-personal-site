@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "build": "hugo",
+    "build:preview": "hugo --baseURL \"${DEPLOY_PRIME_URL:-/}\" --buildDrafts --buildFuture",
+    "start": "hugo server"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.5",
+    "hugo-extended": "^0.97.3",
+    "postcss": "^8.4.12",
+    "postcss-cli": "^9.1.0"
+  },
+  "dependencies": {
+    "postcss-sass": "^0.5.0",
+    "postcss-scss": "^4.0.4",
+    "sass": "^1.51.0"
+  }
+}

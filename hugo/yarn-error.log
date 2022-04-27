@@ -1,0 +1,40 @@
+Arguments: 
+  /usr/local/Cellar/node@16/16.14.2/bin/node /usr/local/Cellar/yarn/1.22.18/libexec/bin/yarn.js
+
+PATH: 
+  /usr/local/opt/openssl@1.1/bin:/usr/local/opt/node@16/bin:/Users/calebtracey/google-cloud-sdk/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/latest/bin/psql:/Library/TeX/texbin:/usr/local/go/bin:/Library/Apple/usr/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/usr/local/opt/openssl@1.1/bin:/usr/local/opt/node@16/bin:/Users/calebtracey/google-cloud-sdk/bin:/usr/local/sbin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  16.14.2
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/calebtracey/Desktop/Code/hugo-personal-site/hugo/package.json: Unexpected token } in JSON at position 220
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.22.18/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.22.18/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.22.18/libexec/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "scripts": {
+      "build": "hugo",
+      "build:preview": "hugo --baseURL \"${DEPLOY_PRIME_URL:-/}\" --buildDrafts --buildFuture",
+      "start": "hugo server"
+    },
+    "devDependencies": {
+      "autoprefixer": "^10.3.4",
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

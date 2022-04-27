@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        {{ partial "head" . }}
+        <meta charset="utf-8">
+        <title>{{ block "title" . }}
+            {{ .Site.Title }}
+            {{ end }}</title>
+    </head>
+    {{ block "navbar" . }}
+    {{ end }}
+    <body class="body">
+        <div class="content">
+            {{ block "main" . }}
+            <!-- The part of the page that begins to differ between templates -->
+            {{ end }}
+            {{ partial "footer" . }}
+        </div>
+   
+    </body>
+
+</html>

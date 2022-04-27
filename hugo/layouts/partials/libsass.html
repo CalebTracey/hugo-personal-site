@@ -1,0 +1,17 @@
+{{ $opts := (dict "transpiler" "libsass" "outputStyle" "compressed" "includePaths" (slice "node_modules"))}}
+{{ if eq hugo.Environment "development"}}
+  {{ $opts = (dict "transpiler" "libsass" "enableSourceMap" true "includePaths" (slice "node_modules"))}}
+{{ end }}
+
+{{ $css := resources.Get "scss/main.scss" }}
+{{ $common := (resources.Match "scss/common/*.scss") | resources.Concat "assets/scss/common.scss" }}
+
+{{ $fonts := resources.Get "scss/fonts.scss" }}
+{{ $fonts = $fonts | resources.ExecuteAsTemplate "fonts.scss" .  }}
+
+{{ $navbar := (resources.Match "scss/navbar/*.scss") | resources.Concat "assets/scss/navbar.scss" }}
+
+{{ $stylesheet := (slice $css $common $navbar $fonts) | resources.Concat "assets/scss/stylesheet.css" | fingerprint "sha512" }}
+{{ $stylesheet = $stylesheet | resources.ToCSS $opts }}
+
+<link type="text/css" rel="stylesheet" href="{{ $stylesheet.RelPermalink }}">

@@ -1,0 +1,40 @@
+%navbar-content-text {
+  font-size: large;
+  color: #4B7AD2;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.navbar {
+  background-color: $secondary-color;
+  color: $primary-color;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 5rem;
+  align-items: center;
+
+  &__title {
+    @extend %title-font;
+    letter-spacing: 3px;
+    margin-left: 5rem;
+    font-size: xx-large;
+    width: 25%;
+    white-space: nowrap;
+  }
+
+  &__content {
+    width: 25%;
+    margin-left: 0;
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+  }
+
+  &__item a, a:hover, a:focus, a:active {
+    @extend %navbar-content-text;
+  }
+}

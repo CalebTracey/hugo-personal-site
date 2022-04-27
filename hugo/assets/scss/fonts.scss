@@ -1,0 +1,43 @@
+
+
+$font-primary: {{ $.Site.Params.body_font | default "'Roboto', sans-serif" }} !default;
+$font-secondary: {{ $.Site.Params.heading_font | default "'Roboto', sans-serif" }} !default;
+
+$primary-font-color: #292B32;
+$secondary-font-color: #8B999C;
+$header-font-color: #343A40;
+$title-font-color: #8A8C93;
+
+%standard-font {
+  font-family: $font-primary;
+  color: $primary-font-color;
+}
+
+%header-font {
+  font-family: $font-secondary;
+  color: $header-font-color;
+}
+
+%title-font {
+  font-family: $font-secondary;
+  color: $title-font-color;
+}
+
+body {
+  @extend %standard-font;
+  background-color: $primary-color;
+
+}
+
+header, h1, h2, h3, h4, h5, h6 {
+  @extend %header-font;
+  letter-spacing: 2px;
+ }
+
+ // F4F5F5
+ // 7F8383
+ // 7F8383
+ // 7E7778
+ // 292B32
+ //
+ //
